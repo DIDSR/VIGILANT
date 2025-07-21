@@ -7,10 +7,19 @@ import math
 import pandas as pd
 
 from .config import config
-from .utilities import parse, get_versions
+from .utilities import clean, get_versions
 
 def learning(data:pd.DataFrame, **kwargs) -> pd.DataFrame:
-    data = parse(data, **kwargs)
+    """ Measures the model's learning with respect to each version.
+
+    Args:
+        data: performance data with indicated dataset and model versions.
+        **kwargs: optional additional arguments passed to :func:`clean`.
+
+    Returns:
+        A pandas DataFrame containing the calculated learning for each indicated version.
+    """
+    data = clean(data, **kwargs)
     versions = get_versions(data)
     results = pd.DataFrame(columns=['version', 'learning'])
     for (idx, version) in enumerate(versions):
@@ -22,7 +31,16 @@ def learning(data:pd.DataFrame, **kwargs) -> pd.DataFrame:
     return results
     
 def potential(data:pd.DataFrame, **kwargs) -> pd.DataFrame:
-    data = parse(data, **kwargs)
+    """ Measures the model's potential learning with respect to each version.
+
+    Args:
+        data: performance data with indicated dataset and model versions.
+        **kwargs: optional additional arguments passed to :func:`clean`.
+
+    Returns:
+        A pandas DataFrame containing the calculated potential for each indicated version.
+    """
+    data = clean(data, **kwargs)
     versions = get_versions(data)
     results = pd.DataFrame(columns=['version', 'potential'])
     for (idx, version) in enumerate(versions):
@@ -34,8 +52,18 @@ def potential(data:pd.DataFrame, **kwargs) -> pd.DataFrame:
     return results
 
 def retention(data:pd.DataFrame, decay:int|float|None=None, **kwargs) -> pd.DataFrame:
+    """ Measures the model's knowledge retention with respect to each version.
+
+    Args:
+        data: performance data with indicated dataset and model versions.
+        decay: exponential decay term for calculating the weighted average.
+        **kwargs: optional additional arguments passed to :func:`clean`.
+
+    Returns:
+        A pandas DataFrame containing the calculated retention for each indicated version.
+    """
     decay = config.decay if decay is None else decay
-    data = parse(data, **kwargs)
+    data = clean(data, **kwargs)
     versions = get_versions(data)
     results = pd.DataFrame(columns=['version', 'retention'])
     for (idx, version) in enumerate(versions):

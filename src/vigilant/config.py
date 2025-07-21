@@ -4,6 +4,14 @@ __all__ = [
 ]
 
 class Configuration(object):
+    """ Stores user configuration options; `config` is the global instance.
+
+    Attributes:
+        dataset_key: Column containing dataset version information.
+        model_key: Column containing model version information.
+        performance_key: Column containing model performance.
+        decay: exponential decay term used in :func:`retention`.
+    """
     default = dict(
         dataset_key='dataset',
         model_key='model',
