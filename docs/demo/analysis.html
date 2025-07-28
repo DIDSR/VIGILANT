@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VIGILANT</title>
+        <link rel="stylesheet" href="./static/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script type="module" src="./script/navigation.js"></script>
+    </head>
+    <body onload="window.populateNavigationBar('Analysis')">
+        <div id="navigation-bar"></div>
+        <div>
+            <!-- TODO: find better place for the reset button -->
+            <div id="analysis-header">
+                <div id="file-upload">
+                    <input type="file" accept=".csv">
+                </div>
+                <div></div>
+                <button type="button" class="material-icons secondary" id="reset-button">replay</button>
+            </div>
+            
+            <div id="data-cleaning">
+                <div id="data-cleaning-options">
+                    <span>
+                        <label>Dataset</label>
+                        <select name="datasetKey" required="true" default="dataset">
+                            <option hidden value="" class="default">Select a column</option>
+                        </select>
+                        <span class="validation-errors"></span>
+                    </span>
+                    <span>
+                        <label>Model</label>
+                        <select name="modelKey" required="true" default="model">
+                            <option hidden value="" class="default">Select a column</option>
+                        </select>
+                        <span class="validation-errors"></span>
+                    </span>
+                    <span>
+                        <label>Performance</label>
+                        <!-- TODO: default -->
+                        <select name="performanceKey" required="true" default="AUROC">
+                            <option hidden value="" class="default">Select a column</option>
+                        </select>
+                        <span class="validation-errors"></span>
+                    </span>
+                    <span>
+                        <label>Repetition</label>
+                        <select name="repetitionKey" default="repetition">
+                            <option hidden value="" class="default">Select a column</option>
+                            <option value="" class="default">None</option>
+                        </select>
+                        <span class="validation-errors"></span>
+                    </span>
+                    <button type="button" id="submit-data-cleaning" class="primary">Submit</button>
+                </div>
+                <div id="overall-validation-errors"></div>
+                <details id="input-data-preview" open="">
+                    <summary>Input data</summary>
+                </details>
+            </div>
+            <div id="results-display">
+                <div id="plot-target"></div>
+                <div id="table-wrapper">
+                    <details id="raw-data">
+                        <summary>Data</summary>
+                    </details>
+                    <details id="results-data" open="">
+                        <summary>
+                            <span>VIGILANT Measurements</span>
+                            <a type='button' class="material-icons tertiary" download="VIGILANT-results.csv">download</a>
+                        </summary>
+                        <details id="results-data-long">
+                            <summary>
+                                <span>By Repetition</span>
+                                <a type='button' class="material-icons tertiary" download="VIGILANT-results-by-repetition.csv">download</a>
+                            </summary>
+                        </details>
+                    </details>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
