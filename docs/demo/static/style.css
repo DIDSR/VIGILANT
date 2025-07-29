@@ -372,5 +372,7 @@ a[type="button"] {
     }
 }
 
-
+[hidden] {
+    display: none !important;
+}
 

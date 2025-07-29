@@ -37,7 +37,11 @@ export function Plot({
     yticks=null,
 }={}) {
     let root = d3.create('div')
-        .attr('class', 'plot');
+        .attr('class', 'plot')
+        .style('display', 'grid')
+        .style('grid-template-rows', 'auto 1fr');
+    root.append('div').attr('class', 'legend')
+        .style('display', 'flex')
     let $ = root.append('svg');
     let plot = root.node();
     let width, height, xAxis, yAxis;
@@ -268,8 +272,25 @@ export function LinePlot(data=[], {
                 })
                 return pth
             })
-            .attr('stroke',([h,d]) => color(h)) // TODO
+            .attr('stroke', ([h,_]) => color(Object.values(h)[0]))
             .attr('fill', 'none')
+        // update the legend
+        let legend = d3.select(this).select('div.legend')
+            .selectAll('div')
+            .data(color.domain())
+            .join(function (enter) {
+                let d = enter.append('div')
+                    .style('display', 'flex');
+                d.append('span').attr('class', 'handle');
+                d.append('span').attr('class', 'label');
+                return d
+            })
+        legend.selectAll('span.handle')
+            .style('display', 'block')
+            .style('min-width', '3em')
+            .style('background-color', d => color(d));
+        legend.selectAll('span.label')
+            .text(d => d)
     }
     return plot;
 }

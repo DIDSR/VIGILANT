@@ -16,13 +16,11 @@ function AnalysisConfiguration() {
             
         },
         set: function(key, value) {
-            console.assert(this.trackedKeys.includes(key));
             window.sessionStorage[key] = JSON.stringify(value);
         },
         get: function(key) {
-            console.assert(this.trackedKeys.includes(key));
             let value = window.sessionStorage[key];
-            if (value === 'undefined') return undefined;
+            if ((value === 'undefined') || (value === undefined)) return undefined;
             return JSON.parse(value);
         }
     }
