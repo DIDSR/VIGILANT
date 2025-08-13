@@ -53,8 +53,14 @@ export function configureAnalysis() {
     d3.select('#file-upload input[type="file"]')
         .on('input', (event) => {
             loadFile(event.target.files[0]).then( data => {
-                config.set('data', data)
-                configureAnalysis();
+                if (typeof data == 'string') { // handle error
+                    document.getElementById('fileInputError').innerText = data;
+                    document.getElementById('fileInputError').toggleAttribute('hidden', false);
+                } else {
+                    document.getElementById('fileInputError').toggleAttribute('hidden', true); // make sure that this is hidden
+                    config.set('data', data)
+                    configureAnalysis();
+                }
             })
         })
     // handle Data cleaning
@@ -136,7 +142,9 @@ function validateDataCleaning(config) {
 
 async function loadFile(file) {
     let content = await file.text()
-    if (file.type == 'text/csv') {
+    if (['text/csv', 'application/vnd.ms-excel'].includes(file.type) ) {
         return d3.csvParse(content)
+    } else {
+        return `Unsupported file type "${file.type}"`
     }
 }

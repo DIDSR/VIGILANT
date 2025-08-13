@@ -107,7 +107,7 @@ body {
     }
 }
 
-#analysis-header {
+#analysis-header > div:first-child {
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -187,23 +187,13 @@ body {
     color: var(--accent-2);
     padding: var(--curve);
     border-radius: var(--curve);
+    background-color: rgba(from var(--accent-4) r g b / 1);
     margin: 10px;
     position: relative;
     > span {
         position: relative;
         z-index: 2;
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-color: var(--accent-4);
-        border-radius: inherit;
-        z-index: 1;
-    }
+    }/
 }
 
 /* Broadly applied styles */
@@ -253,6 +243,14 @@ body {
         right: 5px;
         top: 5px;
     }
+}
+
+.error {
+    background-color:  rgba(from var(--error) r g b / var(--error-opacity)); 
+    margin: 10px;
+    color: var(--error);
+    border-radius: var(--curve);
+    padding: var(--curve);
 }
 
 table.data-table {
@@ -376,7 +374,6 @@ a[type="button"] {
     display: none !important;
 }
 
-/* DEBUG */
 .legend{
     padding: var(--curve);
     justify-content: space-around;

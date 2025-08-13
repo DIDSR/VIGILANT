@@ -12,11 +12,14 @@
         <div>
             <!-- TODO: find better place for the reset button -->
             <div id="analysis-header">
-                <div id="file-upload">
-                    <input type="file" accept=".csv">
+                <div>
+                    <div id="file-upload">
+                        <input type="file" accept=".csv">
+                    </div>
+                    <div></div> 
+                    <button type="button" class="material-icons secondary" id="reset-button">replay</button>
                 </div>
-                <div></div>
-                <button type="button" class="material-icons secondary" id="reset-button">replay</button>
+                <div class="error" id="fileInputError" hidden></div>
             </div>
             
             <div id="data-cleaning">
