@@ -1,3 +1,6 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons+Outlined";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -368,6 +371,30 @@ a[type="button"] {
         height: 100%;
         width: 100%;
     }
+}
+
+:has( > .tooltip) {
+    border: 2px solid;
+    position: relative;
+    &:hover {
+        > .tooltip {
+            display: unset;
+        }
+    }
+}
+.tooltip {
+    /* border: 2px solid red; */
+    border-radius: var(--curve);
+    padding: var(--curve);
+    background-color: var(--background-1);
+    box-shadow: 0px 2px 5px grey;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.2em);
+    transform: translate(-50%, 0%);
+    display: none;
+    min-width: fit-content;
+    width: 15em;
 }
 
 [hidden] {
