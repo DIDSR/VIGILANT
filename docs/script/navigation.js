@@ -58,7 +58,6 @@ function getTheme() {
     document.documentElement.setAttribute('theme', theme);
     let toggleButton = document.getElementById('change-theme');
     if (toggleButton) {
-        console.log('togglebutton:', toggleButton)
         toggleButton.classList.add('material-icons')
         toggleButton.innerText = (theme == 'dark') ? 'light_mode' : 'dark_mode';
     }

@@ -55,9 +55,9 @@ export function populateExamples() {
         .join('div')
         .attr('class', 'example-select')
         .attr('selected', (d,i) => (i === selectedExample) ? true : undefined)
-        .attr('idx', (d,i) => i)
-        .on('click', (event) => {
-            urlParams.set('ex',event.target.getAttribute('idx'));
+        .attr('idx', (d,i) => i);
+    d3.select("#example-display").on('change', (event) => {
+            urlParams.set('ex',event.target.querySelector(`[selected]`).getAttribute('idx'));
             window.location.search = urlParams;
         })
     $.attr('name', d => d.name)

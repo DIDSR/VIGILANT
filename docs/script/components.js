@@ -247,7 +247,7 @@ class TabbedSelection extends HTMLElement {
         const newSelection = this.querySelector(`[name="${name}"]`)
         newSelection.toggleAttribute('selected', true);
         event.target.toggleAttribute('selected', true);
-
+        this.dispatchEvent(new Event('change'))
     }
     get value() {
         const selected = this.querySelector('[selected]')
