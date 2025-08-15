@@ -2,8 +2,8 @@ import { group, unique } from "./utilities.js";
 
 export function Plot({
     aspect=2,
-    scale=200,
-    resizable=true,
+    scale=400,
+    resizable=false,
     backgroundColor='none',
     backgroundCurve=2,
     margin=10,
@@ -91,12 +91,14 @@ export function Plot({
             .text(title)
             .attr('text-anchor', 'middle')
             .attr('dominant-baseline', 'hanging')
-            .attr('y', marginTop);
+            .attr('y', marginTop)
+            .attr('fill', 'currentColor');
         $.select('.x-label') 
             .text(xlabel)
             .attr('text-anchor', 'middle')
             .attr('dominant-baseline', 'auto')
-            .attr('y', height-marginBottom);
+            .attr('y', height-marginBottom)
+            .attr('fill', 'currentColor');
         $.select('.y-label')
             .text(ylabel)
             .attr('text-anchor', 'start')
@@ -105,7 +107,8 @@ export function Plot({
             .style('transform-box', 'fill-box')
             .style('transform', 'rotate(-90deg)')
             .attr('x', marginLeft)
-            .attr('dx', -$.select('.y-label').node().getBBox().height*2); // Not sure why the x2 is needed (it wasn't needed in the original code)
+            .attr('dx', -$.select('.y-label').node().getBBox().height*2) // Not sure why the x2 is needed (it wasn't needed in the original code)
+            .attr('fill', 'currentColor');
 
         // Adjust the margins based on the size of the axies + labels + title
         mb += $.select('.x-axis').node().getBBox().height + $.select('.x-label').node().getBBox().height + xlabelPad;
@@ -172,14 +175,14 @@ export function Plot({
         } else return undefined;
         this.update();
     }
-    let resizeObserver = new ResizeObserver(function(entries){
-        for (const entry of entries) {
-            if (entry.target.attr('resizable')) {
-                entry.target.attr('aspect', entry.contentRect.width/entry.contentRect.height )
-            }
-        }
-    })
-    resizeObserver.observe(plot);
+    // let resizeObserver = new ResizeObserver(function(entries){
+    //     for (const entry of entries) {
+    //         if (entry.target.attr('resizable')) {
+    //             entry.target.attr('aspect', entry.contentRect.width/entry.contentRect.height )
+    //         }
+    //     }
+    // })
+    // resizeObserver.observe(plot);
     return plot;
 }
 
@@ -221,7 +224,7 @@ export function LinePlot(data=[], {
     hue='color',
     plotArgs={},
     lineWidth=3,
-    outlineColor='white',
+    outlineColor='var(--text-2)',
     outlineWidth=1,
     outlineOpacity=1,
     errorCapLength=10,

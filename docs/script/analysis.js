@@ -28,6 +28,7 @@ function AnalysisConfiguration() {
 
 
 export function configureAnalysis() {
+    console.log('Configuring the analysis page')
     // reset needed elements
     d3.select('#overall-validation-errors').selectAll('*').remove()
     d3.select('.validation-errors').selectAll("*").remove()
@@ -45,12 +46,14 @@ export function configureAnalysis() {
     } else {
         stage = (config.get('cleaning-complete')) ? 'results' : 'cleaning';
     }
+    console.log('STAGE:', stage)
     // show/hide page sections accordingly
     d3.select('#file-upload').attr('hidden', (stage === 'upload') ? undefined : true);
+    d3.select('#reset-button').attr('hidden', (stage === 'upload') ? true : undefined);
     d3.select('#data-cleaning').attr('hidden', (stage === 'cleaning') ? undefined : true);
     d3.select('#results-display').attr('hidden', (stage === 'results') ? undefined : true);
     // bind upload action
-    d3.select('#file-upload input[type="file"]')
+    d3.select('#file-upload')
         .on('input', (event) => {
             loadFile(event.target.files[0]).then( data => {
                 if (typeof data == 'string') { // handle error
@@ -86,6 +89,7 @@ export function configureAnalysis() {
     if ((config.get('data') !== undefined) & (config.get('cleaning-complete'))) {
         displayResults(config.get('data'))
     }
+    console.log('DONE')
 }
 function validateDataCleaning(config) {
     let validationError = false

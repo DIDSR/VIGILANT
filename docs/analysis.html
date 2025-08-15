@@ -5,21 +5,22 @@
         <link rel="stylesheet" href="./static/style.css">
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script type="module" src="./script/navigation.js"></script>
+        <script type="text/javascript" src="./script/components.js"></script>
     </head>
-    <body onload="window.populateNavigationBar('Analysis')">
-        <div id="navigation-bar"></div>
+    <body onload="getTheme(); populateNavigationBar('Analysis')">
+        <div id="navigation-bar">
+            <a href="./index.html" id="home-link">VIGILANT</a>
+            <a class="spacer"></a>
+            <div id="change-theme" onclick="toggleTheme()">Change Theme</div>
+        </div>
         <div>
-            <!-- TODO: find better place for the reset button -->
-            <div id="analysis-header">
-                <div>
-                    <div id="file-upload">
-                        <input type="file" accept=".csv">
-                    </div>
-                    <div></div> 
-                    <button type="button" class="material-icons secondary" id="reset-button">replay</button>
-                </div>
-                <div class="error" id="fileInputError" hidden></div>
+            <div>
+                <button hidden type="button"  id="reset-button">Upload another file<span class="material-icons">replay</span></button>
             </div>
+            
+            <file-upload id="file-upload" accept=".csv, application/vnd.ms-excel" accept-display=".csv"></file-upload>
+            <div class="error" id="fileInputError" hidden></div>
+            
             
             <div id="data-cleaning">
                 <div id="data-cleaning-options">
@@ -40,7 +41,6 @@
                     </span>
                     <span>
                         <label>Performance</label>
-                        <!-- TODO: default -->
                         <select name="performanceKey" required="true" default="AUROC">
                             <option hidden value="" class="default">Select a column</option>
                         </select>
@@ -82,6 +82,8 @@
                 </div>
                 
             </div>
-        </div>
+        </div> 
+
+
     </body>
 </html>

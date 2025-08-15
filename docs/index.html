@@ -2,17 +2,29 @@
 <html>
     <head>
         <title>VIGILANT</title>
-        <link rel="stylesheet" href="./static/style.css">
+        <link rel="stylesheet" href="./static/index.css">
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script type="module" src="./script/navigation.js"></script>
     </head>
-    <body onload="window.populateNavigationBar('Home')">
-        <div id="navigation-bar"></div>
-        <div>
-            <div id="title-block">VIGILANT</div>
-            <div id="subtitle-block">
-                Evol<em>vi</em>n<em>g</em> A<em>I</em> <em>L</em>earning <em>a</em>nd Rete<em>nt</em>ion Measurements
+    <body onload="getTheme();populateNavigationBar('Home')">
+        <div id="change-theme" onclick="toggleTheme()">Change Theme</div>
+        <div id="main">
+            <h1>VIGILANT</h1>
+            <h2>
+                <span>E</span><span>v</span><span>o</span><span>l</span><span class="emphasize">v</span><span class="emphasize">i</span><span>n</span><span class="emphasize">g</span>
+                <span>A</span><span class="emphasize">I</span>
+                <span class="emphasize">L</span><span>e</span><span>a</span><span>r</span><span>n</span><span>i</span><span>n</span><span>g</span>
+                <span class="emphasize">a</span><span>n</span><span>d</span>
+                <span>R</span><span>e</span><span class="emphasize">n</span><span class="emphasize">t</span><span>e</span><span>n</span><span>t</span><span>i</span><span>o</span><span>n</span>
+                <span>M</span><span>e</span><span>a</span><span>s</span><span>u</span><span>r</span><span>e</span><span>m</span><span>e</span><span>n</span><span>t</span><span>s</span>
+            </h2>
+            <div id="selection-menu">
+                <a href="./examples.html">View an example</a>
+                <div>or</div>
+                <a href="./temp.html">Upload your own data</a>
             </div>
         </div>
+
+        
     </body>
 </html>

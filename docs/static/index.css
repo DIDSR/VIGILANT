@@ -1,0 +1,88 @@
+@import './style.css';
+
+:root {
+    background: var(--background-1);
+}
+
+body {
+    --pad: 2em;
+    height: calc(100vh - var(--pad)*2);
+    width: calc(100vw - var(--pad)*2);
+    margin: var(--pad);
+    display: grid;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--accent-5), var(--accent-4), var(--background-1), var(--accent-4), var(--accent-5));
+    padding: 2px; /* Visually, this is the border width */
+    border-radius: 8em 0px;
+    animation-duration: 2s;
+}
+
+#main {
+    background: var(--background-1);
+    border-radius: inherit;
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 1fr;
+    animation-name: FloatUp;
+    animation-duration: inherit;
+    justify-items: center;
+    overflow: hidden;
+    > * {
+        animation-name: FadeIn;
+        animation-duration: inherit;
+    }
+}
+h1 {
+    align-self: end;
+}
+h2 {
+    text-align: center;
+    color: var(--accent-1);
+    align-self: start;
+    font-weight: lighter;
+    > .emphasize {
+        font-weight: 900;
+        color: var(--accent-3);
+    }
+}
+#selection-menu {
+    display: grid;
+    justify-items: center;
+    align-self: start;
+}
+a:link {
+    color: var(--accent-1);
+    text-decoration: none;
+}
+a:visited {
+    color: var(--accent-3);
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: var(--accent-4);
+}
+
+@keyframes FloatUp {
+    0%{padding-top: 10%; }
+    100%{padding-top: 0%;}
+}
+
+@keyframes FadeIn {
+    0%{opacity: 0%}
+    100%{opacity: 100%}
+}
+
+
+#change-theme {
+    position: absolute;
+    right: calc(var(--pad) - 0.5em);
+    margin: 0.25em;
+    /* border: 1px solid; */
+    color: rgba( from var(--accent-5) r g b /0.5);
+    animation-name: FadeIn;
+    animation-duration: inherit;
+    &:hover {
+        color: var(--accent-1);
+    }
+}

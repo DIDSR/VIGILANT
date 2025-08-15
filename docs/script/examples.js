@@ -50,15 +50,9 @@ export function populateExamples() {
     let $;
     // Set up the example selection menu
     $ = d3.select("#example-display")
-        .selectAll('div.example-select')
+        .selectAll('div')
         .data(Examples)
-        .join(function(enter) {
-            let d = enter.append('div');
-            d.append('span').attr('class', 'material-icons');
-            d.append('span').attr('class','label')
-            d.append('span').attr('class', 'tooltip');
-            return d
-        })
+        .join('div')
         .attr('class', 'example-select')
         .attr('selected', (d,i) => (i === selectedExample) ? true : undefined)
         .attr('idx', (d,i) => i)
@@ -66,9 +60,8 @@ export function populateExamples() {
             urlParams.set('ex',event.target.getAttribute('idx'));
             window.location.search = urlParams;
         })
-    $.selectAll('.label')
-        .text(d =>d.name);
+    $.attr('name', d => d.name)
+     .text(d => d.description);
     d3.select('#example-description > span').text(example.description)
     displayResults(example.data)
-
 }

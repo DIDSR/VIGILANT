@@ -50,4 +50,5 @@ export function displayResults(data, {
     $ = d3.select("#plot-target");
     $.selectAll('.plot').remove()
     $.node().append(plot)
+    plot.update();
 }
