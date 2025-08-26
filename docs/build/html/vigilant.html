@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Measurements &#8212; VIGILANT  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=d5a349cf" />
+    <link rel="stylesheet" type="text/css" href="_static/remove-footer.css?v=4a2bfc8e" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="VIGILANT documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-vigilant.measurements">
+<span id="measurements"></span><h1>Measurements<a class="headerlink" href="#module-vigilant.measurements" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="vigilant.measurements.learning">
+<span class="sig-prename descclassname"><span class="pre">vigilant.measurements.</span></span><span class="sig-name descname"><span class="pre">learning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#vigilant.measurements.learning" title="Link to this definition">¶</a></dt>
+<dd><p>Measures the model’s learning with respect to each version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – performance data with indicated dataset and model versions.</p></li>
+<li><p><strong>**kwargs</strong> – optional additional arguments passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">clean()</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame containing the calculated learning for each indicated version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vigilant.measurements.potential">
+<span class="sig-prename descclassname"><span class="pre">vigilant.measurements.</span></span><span class="sig-name descname"><span class="pre">potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#vigilant.measurements.potential" title="Link to this definition">¶</a></dt>
+<dd><p>Measures the model’s potential learning with respect to each version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – performance data with indicated dataset and model versions.</p></li>
+<li><p><strong>**kwargs</strong> – optional additional arguments passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">clean()</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame containing the calculated potential for each indicated version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vigilant.measurements.retention">
+<span class="sig-prename descclassname"><span class="pre">vigilant.measurements.</span></span><span class="sig-name descname"><span class="pre">retention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#vigilant.measurements.retention" title="Link to this definition">¶</a></dt>
+<dd><p>Measures the model’s knowledge retention with respect to each version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – performance data with indicated dataset and model versions.</p></li>
+<li><p><strong>decay</strong> – exponential decay term for calculating the weighted average.</p></li>
+<li><p><strong>**kwargs</strong> – optional additional arguments passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">clean()</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame containing the calculated retention for each indicated version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-vigilant.config">
+<span id="configuration"></span><h1>Configuration<a class="headerlink" href="#module-vigilant.config" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="vigilant.config.Configuration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vigilant.config.</span></span><span class="sig-name descname"><span class="pre">Configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vigilant.config.Configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Stores user configuration options; <cite>config</cite> is the global instance.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vigilant.config.Configuration.dataset_key">
+<span class="sig-name descname"><span class="pre">dataset_key</span></span><a class="headerlink" href="#vigilant.config.Configuration.dataset_key" title="Link to this definition">¶</a></dt>
+<dd><p>Column containing dataset version information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vigilant.config.Configuration.model_key">
+<span class="sig-name descname"><span class="pre">model_key</span></span><a class="headerlink" href="#vigilant.config.Configuration.model_key" title="Link to this definition">¶</a></dt>
+<dd><p>Column containing model version information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vigilant.config.Configuration.performance_key">
+<span class="sig-name descname"><span class="pre">performance_key</span></span><a class="headerlink" href="#vigilant.config.Configuration.performance_key" title="Link to this definition">¶</a></dt>
+<dd><p>Column containing model performance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vigilant.config.Configuration.decay">
+<span class="sig-name descname"><span class="pre">decay</span></span><a class="headerlink" href="#vigilant.config.Configuration.decay" title="Link to this definition">¶</a></dt>
+<dd><p>exponential decay term used in <code class="xref py py-func docutils literal notranslate"><span class="pre">retention()</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vigilant.utilities">
+<span id="utilities"></span><h1>Utilities<a class="headerlink" href="#module-vigilant.utilities" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="vigilant.utilities.clean">
+<span class="sig-prename descclassname"><span class="pre">vigilant.utilities.</span></span><span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">performance_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#vigilant.utilities.clean" title="Link to this definition">¶</a></dt>
+<dd><p>Cleans data to only contain versions with both dataset and model information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – performance data with indicated dataset and model versions.</p></li>
+<li><p><strong>dataset_key</strong> – Column containing dataset version information; if None, uses the value in <code class="xref py py-class docutils literal notranslate"><span class="pre">Configuration</span></code>.</p></li>
+<li><p><strong>model_key</strong> – Column containing model version information; if None, uses the value in <code class="xref py py-class docutils literal notranslate"><span class="pre">Configuration</span></code>.</p></li>
+<li><p><strong>performance_key</strong> – Column containing model performance; if None, uses the value in <code class="xref py py-class docutils literal notranslate"><span class="pre">Configuration</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cleaned data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">VIGILANT</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=DIDSR&repo=VIGILANT&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Measurements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vigilant.measurements.learning"><code class="docutils literal notranslate"><span class="pre">learning()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vigilant.measurements.potential"><code class="docutils literal notranslate"><span class="pre">potential()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vigilant.measurements.retention"><code class="docutils literal notranslate"><span class="pre">retention()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#module-vigilant.config">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vigilant.config.Configuration"><code class="docutils literal notranslate"><span class="pre">Configuration</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#module-vigilant.utilities">Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vigilant.utilities.clean"><code class="docutils literal notranslate"><span class="pre">clean()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">VIGILANT documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Alexis Burgon and Ravi Samala.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/vigilant.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
