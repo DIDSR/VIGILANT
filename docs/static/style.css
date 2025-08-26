@@ -56,6 +56,7 @@
     padding: 0 0.2em;
     overflow: hidden;
     > * {
+        height: 100%;
         position: relative;
         padding: 0 1em;
         flex-shrink: 1;
@@ -63,19 +64,7 @@
         color: var(--text-1);
         text-decoration: none;
         display: flex;
-        align-items: center;
-        &::before {
-            content: "";
-            position: absolute;
-            height: var(--nav-bar-height);
-            width: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: inherit;
-            z-index: -1;
-        }
-        
+        align-items: center;      
     }
     .spacer {
         flex-grow: 1;
