@@ -36,12 +36,9 @@ def clean(data:pd.DataFrame,dataset_key:str|None=None, model_key:str|None=None, 
     missing_dataset_versions = [v for v in all_versions if v not in df['dataset'].unique()]
     incomplete = missing_model_versions + missing_dataset_versions
     df = df[(~df['dataset'].isin(incomplete)) & (~df['model'].isin(incomplete))].copy()
-    # TODO: verbose option -> print if there are options missing
-    # TODO: make sure that there are no duplicate combinations of model and dataset version
     return df
 
-def get_versions(data:pd.DataFrame) -> list: # TODO: make sure that sorting works properly
-    # TODO: we need to map this back to the original versions
+def get_versions(data:pd.DataFrame) -> list:
     versions = list(map(version, list(set(data['dataset'].unique().tolist() + data['model'].unique().tolist()))))
     versions.sort()
     return versions
