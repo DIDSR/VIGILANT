@@ -227,6 +227,7 @@ export function LinePlot(data=[], {
     outlineColor='var(--text-2)',
     outlineWidth=1,
     outlineOpacity=1,
+    errorLineWidth=2,
     errorCapLength=10,
 }={}) {
     data = data.sort((a,b) => x(a) - x(b))
@@ -277,6 +278,7 @@ export function LinePlot(data=[], {
             })
             .attr('stroke', ([h,_]) => color(Object.values(h)[0]))
             .attr('fill', 'none')
+            .attr('stroke-width', errorLineWidth)
         // update the legend
         let legend = d3.select(this).select('div.legend')
             .selectAll('div')
