@@ -272,7 +272,7 @@ export function LinePlot(data=[], {
                     return `M${this.X(x(p))},${this.Y(y(p) + (yerr(p)/2))} V${this.Y(y(p)-(yerr(p)/2))} 
                     M${this.X(x(p)) - (errorCapLength/2)},${this.Y(y(p) + (yerr(p)/2))} h${errorCapLength}
                     M${this.X(x(p)) - (errorCapLength/2)},${this.Y(y(p) - (yerr(p)/2))} h${errorCapLength}`
-                })
+                }).join(" ")
                 return pth
             })
             .attr('stroke', ([h,_]) => color(Object.values(h)[0]))
