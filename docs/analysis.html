@@ -17,11 +17,63 @@
             <div>
                 <button hidden type="button"  id="reset-button">Upload another file<span class="material-icons">replay</span></button>
             </div>
-            
-            <file-upload id="file-upload" accept=".csv, application/vnd.ms-excel" accept-display=".csv"></file-upload>
-            <div class="error" id="fileInputError" hidden></div>
-            
-            
+            <div id="file-upload-wrapper">
+                <file-upload id="file-upload" accept=".csv, application/vnd.ms-excel" accept-display=".csv"></file-upload>
+                <div class="error" id="fileInputError" hidden></div>
+                <div id="expected-input-format">
+                    The uploaded file is expected to be in tabular format, with each row repesenting the performance of a specific version of the model on a specfic version of the dataset.
+                    <br>The following pieces of information are used for each row:
+                    <ol>
+                        <li>Column indicating the dataset version (default: "data") </li>
+                        <li>Column indicating the model version (default: "model")</li>
+                        <li>Column indicating the performance (default: "performance")</li>
+                        <li><i>(Optional)</i> Column indicating the repetition number of the combination of model and dataset version; used to calculate confidence intervals (default: "repetition")</li>
+                    </ol>
+                    <b>Example:</b>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Model</th>
+                                <th>Performance</th>
+                                <th>Repetition <i>(Optional)</i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0.7</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0.8</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>0.5</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>N</td>
+                                <td>N</td>
+                                <td>0.8</td>
+                                <td>R</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div id="data-cleaning">
                 <div id="data-cleaning-options">
                     <span>
@@ -83,7 +135,5 @@
                 
             </div>
         </div> 
-
-
     </body>
 </html>

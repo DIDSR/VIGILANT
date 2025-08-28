@@ -141,7 +141,7 @@
     }
 }
 
-table.data-table {
+table.data-table, #expected-input-format table {
     --table-margin: 0.5em;
     width: calc(100% - var(--table-margin)*2);
     margin: var(--table-margin);
@@ -229,6 +229,18 @@ file-upload {
     }
 }
 
+#expected-input-format {
+    width: 60vw;
+    min-width: fit-content;
+    margin: 3em auto;
+    padding: 1em;
+    th > i {
+        font-weight: normal;
+    }
+    li {
+        margin-left: 2em;
+    }
+}
 
 details {
     margin: 1em;
