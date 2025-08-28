@@ -144,7 +144,9 @@ function validateDataCleaning(config) {
 async function loadFile(file) {
     let content = await file.text()
     if (['text/csv', 'application/vnd.ms-excel'].includes(file.type) ) {
-        return d3.csvParse(content)
+        return d3.csvParse(content);
+    } else if (['application/json'].includes(file.type)) {
+        return JSON.parse(content);
     } else {
         return `Unsupported file type "${file.type}"`
     }

@@ -23,7 +23,7 @@
                 <button hidden type="button"  id="reset-button">Upload another file<span class="material-icons">replay</span></button>
             </div>
             <div id="file-upload-wrapper">
-                <file-upload id="file-upload" accept=".csv, application/vnd.ms-excel" accept-display=".csv"></file-upload>
+                <file-upload id="file-upload" accept=".csv, application/vnd.ms-excel, text/csv, application/json" accept-display=".csv, .json"></file-upload>
                 <div class="error" id="fileInputError" hidden></div>
                 <div id="expected-input-format">
                     The uploaded file is expected to be in tabular format, with each row repesenting the performance of a specific version of the model on a specfic version of the dataset.
