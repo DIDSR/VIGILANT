@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+    <script type="text/javascript">
+        // set the theme before the page loads at all (avoid flickering)
+        const theme = localStorage.getItem('theme') ?? (window.matchMedia("(prefers-color-scheme: dark)") ? 'dark' : 'light');
+        document.documentElement.setAttribute('theme', theme);
+    </script>
     <head>
         <title>VIGILANT</title>
         <link rel="stylesheet" href="./static/index.css">
