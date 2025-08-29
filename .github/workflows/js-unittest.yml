@@ -1,3 +1,4 @@
+name: Javascript unit tests
 on:
   push:
     branches:
