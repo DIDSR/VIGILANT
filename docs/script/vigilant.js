@@ -33,7 +33,7 @@ export function retention(data, versions, decay=0.5) {
     return versions.slice(1).map( (version,i) => {
         i++; // Adjusting for initial slice
         let value;
-        let weights = versions.slice(0,i+1).map((_,ii) => Math.E**(decay*(ii-i)))
+        let weights = versions.slice(0,i).map((_,ii) => Math.E**(decay*(ii-(i-1))));
         weights = weights.map(w => w/weights.reduce((a,b) => a+b,0));
         value = weights.map((w,j) => {
             let d = data.filter(x => (x.model == versions[i]) && (x.dataset == versions[j]))[0].performance;

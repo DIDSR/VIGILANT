@@ -69,11 +69,11 @@ def retention(data:pd.DataFrame, decay:int|float|None=None, **kwargs) -> pd.Data
     for (idx, version) in enumerate(versions):
         if idx == 0:
             continue
-        # get the appropriate weights for current + all previous versions
-        weights = [math.exp(decay*(i-idx)) for i in range(idx+1)] 
+        # get the appropriate weights for all previous versions
+        weights = [math.exp(decay*(i-(idx-1))) for i in range(idx)] 
         weights = [w/sum(weights) for w in weights]
         avg = 0
-        for (v, weight) in zip(versions[:idx+1], weights):
+        for (v, weight) in zip(versions[:idx], weights):
             avg += weight*data[(data['model'] == version) & (data['dataset'] == v)]['performance'].values[0]
 
         results.loc[len(results)] = [version, avg]
