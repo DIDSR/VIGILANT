@@ -1,0 +1,19 @@
+[
+    {
+        "input": [
+            { "model": 1, "dataset": 1, "performance": 0.5 },
+            { "model": 1, "dataset": 2, "performance": 0.4 },
+            { "model": 1, "dataset": 3, "performance": 0.3 },
+            { "model": 2, "dataset": 1, "performance": 0.4 },
+            { "model": 2, "dataset": 2, "performance": 0.7 },
+            { "model": 2, "dataset": 3, "performance": 0.4 },
+            { "model": 3, "dataset": 1, "performance": 0.2 },
+            { "model": 3, "dataset": 2, "performance": 0.4 },
+            { "model": 3, "dataset": 3, "performance": 0.6 }
+        ],
+        "output": [
+            {"version":2, "learning": 0.3, "potential": 0.1, "retention": 0.4},
+            {"version":3, "learning": 0.2, "potential": 0.3, "retention": 0.3245}
+        ]
+    }
+]
