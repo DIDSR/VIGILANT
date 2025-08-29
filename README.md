@@ -6,7 +6,7 @@
 >
 > `python -m http.server -d docs`
 >
-> This command can be run using ay python 3 environment. While this server is running, the demo & documention should be accessible at `http://localhost:8000/`
+> This command can be run using any python 3 environment. While this server is running, the demo & documention should be accessible at `http://localhost:8000/`
 
 VIGILANT is a measurement toolkit for performance assessment of adaptive AI.
 The three included measurements -- *learning*, *rentention*, and *potential* -- help to disentangle performance changes due to model adaptations from those caused by changes in environment.
