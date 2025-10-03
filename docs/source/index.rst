@@ -4,7 +4,7 @@ VIGILANT
 ========
 
 VIGILANT is a measurement toolkit for performance assessment of adaptive AI.
-The three included measurements -- *learning*, *rentention*, and *potential* -- help to disentangle performance changes due to model adaptations from those caused by changes in environment.
+The three included measurements -- *learning*, *retention*, and *potential* -- help to disentangle performance changes due to model adaptations from those caused by changes in environment.
 
 This toolkit is designed to be used with adaptive AI developed in a sequential modification paradigm. It is expected that there are multiple sequential versions of the AI model, each with a corresponding evaluation dataset.
 The input to this tool is the performance of every version of the model, evaluated on every version of the evaluation dataset.
@@ -71,7 +71,7 @@ Minimal example
    # Calculate individual measurements
    L = vigilant.learning(data)
    P = vigilant.potential(data)
-   R = vigilant.rentention(data)
+   R = vigilant.retention(data)
 
 The output of each of the measurement functions is a two column dataframe (`version` and the name of the measurement).
 
