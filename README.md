@@ -13,7 +13,8 @@ The three included measurements &mdash; *learning*, *rentention*, and *potential
 
 ## Background
 
->[!TIP] For a more detailed description of the measurements provided in this repository, check out our [open-access paper](Link to be added).
+>[!TIP]
+>For a more detailed description of the measurements provided in this repository, check out our [open-access paper](Link to be added).
 
 **Adaptive AI** are artificial intelligence models that are created in multiple discrete versions over time, in contrast to *locked models* which are static after training or *continually learning models* which use all provided data as training data.
 
