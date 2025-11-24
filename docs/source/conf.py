@@ -17,7 +17,7 @@ author = 'Alexis Burgon and Ravi Samala'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [ "sphinx.ext.autosectionlabel", 'sphinx.ext.napoleon']
+extensions = [ "sphinx.ext.autosectionlabel", 'sphinx.ext.napoleon', 'sphinx_design']
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -29,7 +29,7 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-html_css_files = ["remove-footer.css", "example-data.css"]
+html_css_files = ["remove-footer.css", "example-data.css", "custom.css"]
 html_theme_options = {
     'github_user':'DIDSR',
     'github_repo':'VIGILANT',

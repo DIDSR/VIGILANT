@@ -9,14 +9,17 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=d5a349cf" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/remove-footer.css?v=4a2bfc8e" />
-    <link rel="stylesheet" type="text/css" href="_static/example-data.css?v=ed07db81" />
+    <link rel="stylesheet" type="text/css" href="_static/example-data.css?v=69322980" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=db1cc4f1" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Measurements" href="vigilant.html" />
+    <link rel="next" title="Example" href="examples.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -39,7 +42,7 @@
 <p>VIGILANT is a measurement toolkit for performance assessment of adaptive AI systems.
 The three included measurements – <em>learning</em>, <em>rentention</em>, and <em>potential</em> – help to disentangle performance changes due to model adaptations from those caused by shifts in the evaluation environment.</p>
 <section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<span id="id1"></span><h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
 <p>VIGILANT can either be utilized as a python package (by cloning the <a class="reference external" href="https://github.com/DIDSR/VIGILANT">source repository</a>) or <a class="reference external" href="/index.html">through your browser</a>. Instructions and examples for the browser version are provided within the interface.</p>
 <p class="customFormat">
 This toolkit is designed to be used with adaptive AI developed in a sequential modification paradigm. It is expected that there are multiple sequential versions of the AI model, each with a corresponding evaluation dataset.
@@ -143,6 +146,11 @@ From this directory, the VIGILANT package can be installed using the command: <c
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#loading-input-data">1. Loading input data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#vigilant-measurements">2. VIGILANT measurements</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="vigilant.html">Measurements</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="vigilant.html#vigilant.measurements.learning"><code class="docutils literal notranslate"><span class="pre">learning()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="vigilant.html#vigilant.measurements.potential"><code class="docutils literal notranslate"><span class="pre">potential()</span></code></a></li>
@@ -196,6 +204,7 @@ From this directory, the VIGILANT package can be installed using the command: <c
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vigilant.html">Measurements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vigilant.html#module-vigilant.config">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vigilant.html#module-vigilant.utilities">Utilities</a></li>
@@ -205,7 +214,7 @@ From this directory, the VIGILANT package can be installed using the command: <c
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="vigilant.html" title="next chapter">Measurements</a></li>
+      <li>Next: <a href="examples.html" title="next chapter">Example</a></li>
   </ul></li>
 </ul>
 </div>

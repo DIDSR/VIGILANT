@@ -6,6 +6,8 @@ VIGILANT
 VIGILANT is a measurement toolkit for performance assessment of adaptive AI systems.
 The three included measurements -- *learning*, *rentention*, and *potential* -- help to disentangle performance changes due to model adaptations from those caused by shifts in the evaluation environment.
 
+.. _getting-started:
+
 Getting Started
 ---------------
 
@@ -133,5 +135,6 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   examples
    vigilant
 

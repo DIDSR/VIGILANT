@@ -10,4 +10,5 @@ table.exampleData td[version],
     &[version="1"] { color: #75cd00; }
     &[version="2"] { color: #00ddd0; }
     &[version="3"] { color: #8557dc; }
+    &[version="4"] { color: #dc98e7; }
 }
