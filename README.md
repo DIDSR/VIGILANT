@@ -78,15 +78,15 @@ For example, for model versions 1, 2, and 3 (each with its own dataset), the inp
 
 | Model version | Dataset version | Performance |
 |---------------|-----------------|-------------|
-| 1             | 1               | 0.6         |
-| 2             | 1               | 0.7         |
-| 3             | 1               | 0.3         |
-| 1             | 2               | 0.4         |
-| 2             | 2               | 0.6         |
-| 3             | 2               | 0.8         |
-| 1             | 3               | 0.9         |
-| 2             | 3               | 0.2         |
-| 3             | 3               | 0.9         |
+| $\color{#75cd00}{\textsf{1}}$             | $\color{#75cd00}{\textsf{1}}$               | 0.6         |
+| $\color{#00ddd0}{\textsf{2}}$             | $\color{#75cd00}{\textsf{1}}$               | 0.7         |
+| $\color{#8557dc}{\textsf{3}}$             | $\color{#75cd00}{\textsf{1}}$               | 0.3         |
+| $\color{#75cd00}{\textsf{1}}$             | $\color{#00ddd0}{\textsf{2}}$               | 0.4         |
+| $\color{#00ddd0}{\textsf{2}}$             | $\color{#00ddd0}{\textsf{2}}$               | 0.6         |
+| $\color{#8557dc}{\textsf{3}}$             | $\color{#00ddd0}{\textsf{2}}$               | 0.8         |
+| $\color{#75cd00}{\textsf{1}}$             | $\color{#8557dc}{\textsf{3}}$               | 0.9         |
+| $\color{#00ddd0}{\textsf{2}}$             | $\color{#8557dc}{\textsf{3}}$               | 0.2         |
+| $\color{#8557dc}{\textsf{3}}$             | $\color{#8557dc}{\textsf{3}}$               | 0.9         |
 
 ### Getting Started
 
