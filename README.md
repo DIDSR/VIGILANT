@@ -8,19 +8,17 @@
 >
 > This command can be run using any python 3 environment. While this server is running, the demo & documention should be accessible at `http://localhost:8000/`
 
-VIGILANT is a measurement toolkit for performance assessment of adaptive AI.
-The three included measurements &mdash; *learning*, *rentention*, and *potential* &mdash; help to disentangle performance changes due to model adaptations from those caused by changes in environment.
+VIGILANT is a measurement toolkit for performance assessment of adaptive AI systems.
+The three included measurements &mdash; *learning*, *rentention*, and *potential* &mdash; help to disentangle performance changes due to model adaptations from those caused by shifts in the evaluation environment.
 
 ## Background
 
 >[!TIP]
->For a more detailed description of the measurements provided in this repository, check out our [open-access paper](Link to be added).
+>For a more detailed description of the measurements provided in this repository, see our [open-access paper](Link to be added).
 
-**Adaptive AI** are artificial intelligence models that are created in multiple discrete versions over time, in contrast to *locked models* which are static after training or *continually learning models* which use all provided data as training data.
+**Adaptive AI** refers to artificial intelligence models developed in multiple discrete versions over time. This differs from *locked models*, which remain unchanged after training, and continually learning models, which treat all incoming data as training data.
 
-The adaptive AI paradigm presents a challenge for performance assessment: the concurrent changes made to the AI model and the model's evaluation dataset.
-
-Consider the paradigm shown in the figure below, if there is an observed improvement from **Performance 1** to **Performance 2**, it isn't known whether that change resulted from an improvement in the model's knowledge or simply a change in the difficulty of the evaluation dataset.
+The adaptive AI paradigm introduces challenges for performance assessment because both (a) the model and (b) the evaluation dataset may change simultaneously. Consider the example below: if performance improves from *Performance 1* to *Performance 2*, the cause may be either (a) an increase in model capability or (b) a change in the difficulty of the evaluation dataset.
 
 ```mermaid
 flowchart TD
@@ -35,9 +33,9 @@ m2 --> e2 ==> p2
 ```
 
 ### Measurements
-To help separate changes in model performance due to model knowledge from those observed due to changes in the evaluation data, VIGILANT provides three adaptive AI performance measurements: *learning*, *potential*, and *retention*.
+VIGILANT provides three measurements to help separate performance changes due to model updates from those caused by variations in the evaluation data: learning, potential, and retention.
 
-All three measurements assume a sequential modification paradigm of $V$ model versions, each with a corresponding evaluation dataset, where the score of model $(M)$ measured on evaluation dataset $(D)$ is represented as $S(M|D)$.
+All measurements assume a sequential modification paradigm with $V$ model versions and corresponding evaluation datasets. The score of model $(M)$ evaluated on dataset $(D)$ is represented as $S(M|D)$.
 
 ```mermaid
 flowchart TD
@@ -74,9 +72,9 @@ Where $W$ is an exponential decay term with tunable parameter $\lambda$; $W(t)=e
 
 ## Using this tool
 
-This toolkit is designed to be used with adaptive AI developed in a sequential modification paradigm. It is expected that there are multiple sequential versions of the AI model, each with a corresponding evaluation dataset.
-The input to this tool is the performance of every version of the model, evaluated on every version of the evaluation dataset.
-For example, a model with the versions 1, 2, and 3 (each with a corresponding dataset), would have an input in the format:
+This toolkit works with adaptive AI systems developed in discrete model versions, each paired with a corresponding evaluation dataset. The required input is the performance of every model version evaluated on every dataset version.
+
+For example, for model versions 1, 2, and 3 (each with its own dataset), the input format is:
 
 | Model version | Dataset version | Performance |
 |---------------|-----------------|-------------|
@@ -92,8 +90,8 @@ For example, a model with the versions 1, 2, and 3 (each with a corresponding da
 
 ### Getting Started
 
-VIGILANT can either be utilized as a python package (by cloning the [source repository](https://github.com/DIDSR/VIGILANT)) or [through your browser](https://DIDSR.github.io/VIGILANT). Instructions and examples for the browser version are provided within the interface.
-Both implementations expect your data to be in the structure shown in the example above. 
+VIGILANT can be used either as a Python package (by cloning the [source repository](https://github.com/DIDSR/VIGILANT)) or [through your browser](https://DIDSR.github.io/VIGILANT). Instructions and examples for the browser version are provided within the interface.
+Both implementations expect data in the structure shown above.
 
 
 #### Python
