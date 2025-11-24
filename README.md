@@ -11,6 +11,8 @@
 VIGILANT is a measurement toolkit for performance assessment of adaptive AI systems.
 The three included measurements &mdash; *learning*, *rentention*, and *potential* &mdash; help to disentangle performance changes due to model adaptations from those caused by shifts in the evaluation environment.
 
+![VIGILANT_overview_flowchart](./docs/static/overview_flowchart.png)
+
 ## Background
 
 >[!TIP]
