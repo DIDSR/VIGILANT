@@ -29,7 +29,7 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-html_css_files = ["remove-footer.css"]
+html_css_files = ["remove-footer.css", "example-data.css"]
 html_theme_options = {
     'github_user':'DIDSR',
     'github_repo':'VIGILANT',

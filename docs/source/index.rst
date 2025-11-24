@@ -3,32 +3,84 @@
 VIGILANT
 ========
 
-VIGILANT is a measurement toolkit for performance assessment of adaptive AI.
-The three included measurements -- *learning*, *retention*, and *potential* -- help to disentangle performance changes due to model adaptations from those caused by changes in environment.
-
-This toolkit is designed to be used with adaptive AI developed in a sequential modification paradigm. It is expected that there are multiple sequential versions of the AI model, each with a corresponding evaluation dataset.
-The input to this tool is the performance of every version of the model, evaluated on every version of the evaluation dataset.
-For example, a model with the versions 1, 2, and 3 (each with a corresponding dataset), would have an input in the format:
-
-============= =============== ===========
-Model version Dataset version Performance
-============= =============== ===========
-1              1              0.6
-2              1              0.7
-3              1              0.3
-1              2              0.4
-2              2              0.6
-3              2              0.8
-1              3              0.9
-2              3              0.2
-3              3              0.9
-============= =============== ===========
+VIGILANT is a measurement toolkit for performance assessment of adaptive AI systems.
+The three included measurements -- *learning*, *rentention*, and *potential* -- help to disentangle performance changes due to model adaptations from those caused by shifts in the evaluation environment.
 
 Getting Started
 ---------------
 
 VIGILANT can either be utilized as a python package (by cloning the `source repository`_) or `through your browser`_. Instructions and examples for the browser version are provided within the interface.
-Both implementations expect your data to be in the structure shown in the example above. 
+
+.. raw:: html
+
+   <p class="customFormat">
+   This toolkit is designed to be used with adaptive AI developed in a sequential modification paradigm. It is expected that there are multiple sequential versions of the AI model, each with a corresponding evaluation dataset.
+   The input to this tool is the performance of every version of the model, evaluated on every version of the evaluation dataset.
+   For example, a model with the versions 
+   <span version="1">1</span>, <span version="2">2</span>, and <span version="3">3</span> (each with a corresponding dataset), would have an input in the format:
+   </p>
+   
+.. raw:: html
+ 
+   <table class="exampleData docutils align-default">
+      <thead>
+         <tr>
+            <th>Model version</th>
+            <th>Dataset version</th>
+            <th>Performance</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td version="1">1</td>
+            <td version="1">1</td>
+            <td>0.6</td>
+         </tr>
+         <tr>
+            <td version="2">2</td>
+            <td version="1">1</td>
+            <td>0.7</td>
+         </tr>
+         <tr>
+            <td version="3">3</td>
+            <td version="1">1</td>
+            <td>0.3</td>
+         </tr>
+         <tr>
+            <td version="1">1</td>
+            <td version="2">2</td>
+            <td>0.4</td>
+         </tr>
+         <tr>
+            <td version="2">2</td>
+            <td version="2">2</td>
+            <td>0.6</td>
+         </tr>
+         <tr>
+            <td version="3">3</td>
+            <td version="2">2</td>
+            <td>0.8</td>
+         </tr>
+         <tr>
+            <td version="1">1</td>
+            <td version="3">3</td>
+            <td>0.9</td>
+         </tr>
+         <tr>
+            <td version="2">2</td>
+            <td version="3">3</td>
+            <td>0.2</td>
+         </tr>
+         <tr>
+            <td version="3">3</td>
+            <td version="3">3</td>
+            <td>0.9</td>
+         </tr>
+      </tbody>
+   </table>
+
+
+
 
 
 Python

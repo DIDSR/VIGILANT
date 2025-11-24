@@ -1,0 +1,13 @@
+.customFormat span[version] {
+    border: 1px solid color-mix(in oklab, currentColor, transparent 90%);
+    padding: 0px 2px;
+    border-radius: 4px;
+}
+
+table.exampleData td[version],
+.customFormat span[version] {
+    background: color-mix(in oklab, currentColor, transparent 95%);
+    &[version="1"] { color: #75cd00; }
+    &[version="2"] { color: #00ddd0; }
+    &[version="3"] { color: #8557dc; }
+}
