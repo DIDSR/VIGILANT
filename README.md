@@ -71,10 +71,13 @@ Where $W$ is an exponential decay term with tunable parameter $\lambda$; $W(t)=e
 
 
 ## Using this tool
+### Getting Started
+
+VIGILANT can be used either as a Python package (by cloning the [source repository](https://github.com/DIDSR/VIGILANT)) or [through your browser](https://DIDSR.github.io/VIGILANT). Instructions and examples for the browser version are provided within the interface.
 
 This toolkit works with adaptive AI systems developed in discrete model versions, each paired with a corresponding evaluation dataset. The required input is the performance of every model version evaluated on every dataset version.
 
-For example, for model versions 1, 2, and 3 (each with its own dataset), the input format is:
+For example, for model versions $\color{#75cd00}{\textbf{1}}$, $\color{#00ddd0}{\textbf{2}}$, and $\color{#8557dc}{\textbf{3}}$ (each with its own dataset), the input format is:
 
 | Model version | Dataset version | Performance |
 |---------------|-----------------|-------------|
@@ -88,10 +91,7 @@ For example, for model versions 1, 2, and 3 (each with its own dataset), the inp
 | $\color{#00ddd0}{\textbf{2}}$             | $\color{#8557dc}{\textbf{3}}$               | $\textbf{0.2}$         |
 | $\color{#8557dc}{\textbf{3}}$             | $\color{#8557dc}{\textbf{3}}$               | $\textbf{0.9}$         |
 
-### Getting Started
 
-VIGILANT can be used either as a Python package (by cloning the [source repository](https://github.com/DIDSR/VIGILANT)) or [through your browser](https://DIDSR.github.io/VIGILANT). Instructions and examples for the browser version are provided within the interface.
-Both implementations expect data in the structure shown above.
 
 
 #### Python
