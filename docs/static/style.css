@@ -120,7 +120,7 @@
     height: 100vh;
     > * {
         max-height: 100%;
-        overflow: scroll;
+        overflow: auto;
     }
 }
 
