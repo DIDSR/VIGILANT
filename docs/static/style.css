@@ -22,7 +22,7 @@
     --text-2: white;
     /* General Settings */
     --curve: 10px;
-    --caret-size: 0.4rem;
+    --caret-size: 0.3rem;
     font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
     --nav-bar-height: 3em;
     background: var(--background-1);
@@ -116,6 +116,10 @@
     display: grid;
     gap: 1em;
     padding: 1em;
+    overflow: hidden;
+    > * {
+        overflow: scroll;
+    }
 }
 
 #plot-target {
@@ -271,7 +275,7 @@ details {
         }
         &::before {
             content: '';
-            border-width: var(--caret-size);
+            border-width: var(--caret-size) calc(var(--caret-size)*1.62);
             border-style: solid;
             border-color: transparent transparent transparent currentColor;
             display: block;

@@ -189,12 +189,44 @@ TabbedSelectionTemplate.innerHTML = `
     .tab {
         background-color: var(--tab-color, lightgrey);
         padding: 0.2em;
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+        > .tabLabel {
+            opacity: 0.5;
+        }
     }
     .tab[selected] {
         background-color: var(--selected-color, grey);
+        .tabLabel {
+            opacity: 1;
+        }
+    }
+    .tab > * {
+        pointer-events: none;
+        user-select: none;
+    }
+    :host([collapsible]) .tab[selected] .collapseIndicator {
+        display: inline-block;
+        height: 0;
+        aspect-ratio: 1;
+        position: relative;
+        border-top: calc(var(--collapse-indicator-size, 8px)*0.86) solid;
+        border-left: calc(var(--collapse-indicator-size, 8px) / 2) solid transparent;
+        border-right: calc(var(--collapse-indicator-size, 8px) / 2) solid transparent;   
+        transform: rotate(0deg);
+        transition: transform 0.1s ease-out;
     }
     ::slotted(:not([selected])) {
         display: none;
+    }
+    :host([collapsible][collapsed]) {
+        #body {
+            display: none;
+        }
+        .tab .collapseIndicator {
+            transform: rotate(-90deg);
+        }
     }
 </style>
 <div id="main">
@@ -227,7 +259,11 @@ class TabbedSelection extends HTMLElement {
             tab.setAttribute('for', name);
             tab.setAttribute('part', 'tab')
             tab.toggleAttribute('selected', e.hasAttribute('selected'))
-            tab.innerText = name;
+            let indicator = tab.appendChild(document.createElement('span'));
+            indicator.classList.add('collapseIndicator');
+            let label = tab.appendChild(document.createElement('span'));
+            label.classList.add('tabLabel');
+            label.innerText = name;
             this.shadow.querySelector('#header').append(tab);
             tab.addEventListener('click', this.handleSelection);
         })
@@ -238,7 +274,10 @@ class TabbedSelection extends HTMLElement {
         const name = (target) ? target.getAttribute('for') : null;
         if (selected) {
             let selName = selected.getAttribute('name');
-            if (selName === name) return;
+            if (selName === name) { // clicked the already selected option
+                if (this.hasAttribute('collapsible')) this.toggleAttribute('collapsed');
+                return;
+            }
             selected.toggleAttribute('selected', false);
             this.shadow.querySelector(`.tab[for="${selName}"]`).toggleAttribute('selected', false);
         }
