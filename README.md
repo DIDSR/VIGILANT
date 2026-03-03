@@ -1,4 +1,4 @@
-# VIGILANT
+# VIGILANT: Measurements for Adaptive AI
 
 > [!NOTE]
 > The documentation and demo (both located in the `docs` folder) will eventually be hosted on github pages.
