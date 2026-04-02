@@ -65,6 +65,7 @@ Where $W$ is an exponential decay term with tunable parameter $\lambda$; $W(t)=e
 
 
 ## Using this tool
+For more detailed information, visit our [project documentation](https://didsr.github.io/VIGILANT/build/html/index.html).
 ### Getting Started
 
 VIGILANT can be used either as a Python package (by cloning the [source repository](https://github.com/DIDSR/VIGILANT)) or [through your browser](https://DIDSR.github.io/VIGILANT). Instructions and examples for the browser version are provided within the interface.
