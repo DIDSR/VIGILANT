@@ -1,13 +1,5 @@
 # VIGILANT: Measurements for Adaptive AI
 
-> [!NOTE]
-> The documentation and demo (both located in the `docs` folder) will eventually be hosted on github pages.
-> To preview how the pages will look once hosted, clone this repository (or at least the entirety of the docs folder), and then run the following command (assumed to be run from the project's root directory):
->
-> `python -m http.server -d docs`
->
-> This command can be run using any python 3 environment. While this server is running, the demo & documention should be accessible at `http://localhost:8000/`
-
 VIGILANT is a measurement toolkit for performance assessment of adaptive AI systems.
 The three included measurements &mdash; *learning*, *rentention*, and *potential* &mdash; help to disentangle performance changes due to model adaptations from those caused by shifts in the evaluation environment.
 
