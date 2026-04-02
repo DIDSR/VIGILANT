@@ -20,7 +20,7 @@ const Pages = [
     {
         name: 'Docs',
         icon: 'integration_instructions', 
-        src: "../build/html/index.html",
+        src: "./build/html/index.html",
         newTab: true,
     }
 ]
